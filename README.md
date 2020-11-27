@@ -1,2 +1,2 @@
-# TextGeneration
-An Artificial Intelligence Agent that generates text using Deep Neural Networks.
+# Text Generation
+Designing Artificial Intelligence Agents that **generate text** using Deep Neural Networks.
