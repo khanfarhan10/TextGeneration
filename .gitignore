@@ -2,7 +2,13 @@
 Create_Virtual_Env.md
 
 # Environment Folder
-TextGenEnv
+TextGenEnv/
+
+# Common Utility for All of My Projects
+common_utils.py
+
+# Model Checkpoints
+model_checkpoints/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
