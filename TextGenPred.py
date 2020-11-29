@@ -7,6 +7,8 @@ import sqlite3
 import os
 import fnmatch
 
+ROOT_DIR = os.getcwd()
+
 
 def find(pattern, path):
     result = []
@@ -21,13 +23,20 @@ def search_file(filename, directory):
     files = find(filename, directory)
     if len(files) > 1:
         print("Warning, Multiple Files Found, Selecting First Entry of :", files)
+    # print(files)
     return files[0]
 
 
 def find_model(filename='shakespearen_model.h5'):
     model_file = filename if os.path.exists(filename) else search_file(
-        filename=filename, directory=os.path.join(ROOT_DIR, "saved_models"))
+        filename=filename+"*", directory=os.path.join(ROOT_DIR, "saved_models"))
     return model_file
+
+
+def find_metadata(filename='shakespeare_metadata.txt'):
+    metadata_file = filename if os.path.exists(filename) else search_file(
+        filename=filename+"*", directory=os.path.join(ROOT_DIR, "dataset_metainfo"))
+    return metadata_file
 
 
 def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
@@ -72,6 +81,28 @@ def generate_text(model, start_string, num_generate=1000, temperature=1.0):
     return (start_string + ''.join(text_generated))
 
 
+def GenerateFromStart(model_name, start_string, num_generate, temp):
+    ROOT_DIR = os.getcwd()
+
+    metadata_file = find_metadata(filename=model_name)
+    vocab = retrieve_list_from_json(filename=metadata_file)
+
+    char2idx, idx2char = get_dataset_metainfo(vocab)
+    unique_chars = len(vocab)
+    embedding_dim = 256
+    rnn_units = 1024
+    BATCH_SIZE = 64
+
+    model = build_model(vocab_size=unique_chars,
+                        embedding_dim=embedding_dim, rnn_units=rnn_units, batch_size=1)
+    model_file = find_model(filename=model_name)
+    model.load_weights(model_file)
+    model.build(tf.TensorShape([1, None]))
+
+    print(generate_text(model, start_string=u"ROMEO: ",
+                        num_generate=2000, temperature=0.8))
+
+
 if __name__ == '__main__':
     ROOT_DIR = os.getcwd()
     #######
@@ -96,3 +127,5 @@ if __name__ == '__main__':
 
 # aim is to save every single thingy in the database to be able to regenrate the output
 # python text_gen_pred.py
+
+# python TextGenPred.py
