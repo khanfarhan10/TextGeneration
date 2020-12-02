@@ -328,3 +328,7 @@ def sidebar_nav():
 
 ROOT_DIRECTORY = os.getcwd()
 sidebar_nav()
+
+# TODO CLEAN OUTPUT TEXT - GRAMMAR AND SPELLING
+
+# TODO CLEAN CODING
