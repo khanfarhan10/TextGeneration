@@ -1,4 +1,13 @@
-numpy==1.18.5
+# keras tools
+Keras==2.4.3
+
+# tensorflow 2.x and extensions
 tensorflow==2.3.0
-streamlit==0.71.0 # for deployment only
-# maybe keras==2.4.3
+
+# fetch Streamlit
+streamlit==0.71.0
+
+# numerical computations & data manipulations
+numpy==1.19.4
+# pandas==1.1.4
+
