@@ -48,7 +48,7 @@ Try the new cross-platform PowerShell https://aka.ms/pscore6
 <code>C:\Users\Tannistha Pal\Documents\GitHub\TextGeneration>python --version
 Python 3.9.0</code>
 
-##### Note : You must install [Python version 3.7.6](https://www.python.org/downloads/release/python-376/) for using this repository. Since our version is not compatible, we installed the other version and performed the following changes in the steps for setup :
+##### Note : You must install [Python version 3.7.6](https://www.python.org/downloads/release/python-376/) for using this project.
 
 
 **Check for the Python Packaging Index (Pypi) version you're running :**
@@ -70,10 +70,7 @@ pip 20.2.3 from c:\users\tannistha pal\appdata\local\programs\python\python39\li
 
 Users for other python versions  may [Install Python 3.7.6](https://www.python.org/downloads/release/python-376/) first and then run the following command to choose the correct python interpreter with the correct path.The common path where windows installs python is : 
 
-<code>C:\Users\Tannistha Pal\AppData\Local\Programs\Python\Python37</code>
-
-virtualenv --python=/usr/bin/python2.6 <path/to/new/virtualenv/>
-
+<code>virtualenv --python=python3.7.6 TextGen</code>
 
 ###### Note : If you have problems with this step, try followng the debugging options [provided below](#useful-links-for-debugging).
 
