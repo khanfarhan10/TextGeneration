@@ -68,7 +68,7 @@ pip 20.2.3 from c:\users\tannistha pal\appdata\local\programs\python\python39\li
 
 <code>C:\Users\Tannistha Pal\Documents\GitHub\TextGeneration>virtualenv TextGenEnv</code>
 
-Users for other python versions  may [Install Python 3.7.6](https://www.python.org/downloads/release/python-376/) first and then run the following command to choose the correct python interpreter with the correct path.The common path where windows installs python is : 
+Users for other python versions  may [Install Python 3.7.6](https://www.python.org/downloads/release/python-376/) first and then run the following command to choose the correct python interpreter with the correct path : 
 
 <code>virtualenv --python=python3.7.6 TextGen</code>
 
