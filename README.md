@@ -102,7 +102,7 @@ When you've obtained the requirements file, do the following with your Environme
 ###### Note : If you have problems with this step, try installing [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/). 
 
 You are now happy to go forth coding and running your app with :
-<code>streamlit run TextSentimentApp.py</code>
+<code>streamlit run TextGenApp.py</code>
 
 ### Useful Links for Debugging :
 
